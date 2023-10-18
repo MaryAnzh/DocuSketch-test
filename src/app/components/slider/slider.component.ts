@@ -10,10 +10,33 @@ import { randomColor } from 'src/app/utile/randomColor';
 
 
 export class SliderComponent {
-  icon = iconsClass[0];
+  iconIndex = 0;
+  icon = iconsClass[this.iconIndex];
   color = randomColor();
+  animation = 0;
+  isButtonDisable = false;
 
   onClick = () => {
+    this.isButtonDisable = true;
+    setTimeout(() => {
+      this.color = randomColor();
+      this.changeIcon();
+      this.isButtonDisable = false;
+    }, 3000);
+
+  }
+
+  changeIcon = () => {
+    const index = Math.floor(Math.random() * iconsClass.length);
+    if (index === this.iconIndex) {
+      this.changeIcon();
+    } else {
+      this.icon = iconsClass[index];
+      this.iconIndex = index;
+    }
+  }
+
+  changAnimation = () => {
 
   }
 }

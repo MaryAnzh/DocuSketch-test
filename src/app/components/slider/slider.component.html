@@ -4,5 +4,8 @@
       style="color: {{color}}; font-size: 10rem;"
       class="fa fa-{{icon}} fa-2x1"></i>
   </div>
-  <button class="slider__button">Click for change</button>
+  <button
+    class="slider__button"
+    [ngClass]="{'disable': isButtonDisable}"
+    (click)="onClick()">Click for change</button>
 </div>
