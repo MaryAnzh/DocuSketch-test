@@ -1,28 +1,44 @@
 import { Component } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
+
 import { iconsClass } from 'src/app/icons-data';
 import { randomColor } from 'src/app/utile/randomColor';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss']
+  styleUrls: ['./slider.component.scss'],
 })
 
 
 export class SliderComponent {
+  delay = 3000;
+  timerInterval = 1000;
   iconIndex = 0;
   icon = iconsClass[this.iconIndex];
   color = randomColor();
-  animation = 0;
+  scale: 0 | 1 = 1;
+  timerCount = this.delay / this.timerInterval;
   isButtonDisable = false;
 
   onClick = () => {
     this.isButtonDisable = true;
+    this.scale = 0;
+    this.timer();
+
     setTimeout(() => {
       this.color = randomColor();
       this.changeIcon();
       this.isButtonDisable = false;
-    }, 3000);
+      this.scale = 1;
+      this.timerCount = this.delay / this.timerInterval;
+    }, this.delay);
 
   }
 
@@ -36,7 +52,12 @@ export class SliderComponent {
     }
   }
 
-  changAnimation = () => {
-
+  timer = () => {
+    const interval = setInterval(() => {
+      this.timerCount -= 1;
+      if (this.timerCount === 1) {
+        clearInterval(interval);
+      }
+    }, this.timerInterval);
   }
 }

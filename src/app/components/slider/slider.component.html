@@ -1,7 +1,10 @@
 <div class="slider">
   <div class="slider__img-wrap">
+    <div
+      class="slider__img-wrap__timer"
+      style="opacity: {{isButtonDisable ? 1 : 0}};">{{timerCount}}</div>
     <i
-      style="color: {{color}}; font-size: 10rem;"
+      style="color: {{color}}; font-size: 10rem; transform: scale({{scale}}); transition: all .3s;"
       class="fa fa-{{icon}} fa-2x1"></i>
   </div>
   <button
