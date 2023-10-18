@@ -1,0 +1,12 @@
+@import '../../../assets/variable';
+
+:host {
+  width: 100%;
+  background-color: $mainColorLight;
+  padding: 1rem;
+
+  .header {
+    width: 100%;
+    font-size: 1.25rem;
+  }
+}
