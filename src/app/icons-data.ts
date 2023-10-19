@@ -1,1 +1,8 @@
-export const iconsClass = ['home', 'check', 'phone', 'magnifying-glass', 'user', 'star'];
+export const iconsClass = [
+  'home',
+  'check',
+  'phone',
+  'magnifying-glass',
+  'user',
+  'star',
+  'image'];

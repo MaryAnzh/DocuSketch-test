@@ -48,5 +48,20 @@
         box-shadow: 0;
       }
     }
+
+    &__icons-list {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax($minIconSize, 1fr));
+      gap: 2rem;
+
+      &__item {
+        width: $minIconSize;
+        height: $minIconSize;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }

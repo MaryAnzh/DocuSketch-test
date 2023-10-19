@@ -5,10 +5,24 @@
       style="opacity: {{isButtonDisable ? 1 : 0}};">{{timerCount}}</div>
     <i
       style="color: {{color}}; font-size: 10rem; transform: scale({{scale}}); transition: all .3s;"
-      class="fa fa-{{icon}} fa-2x1"></i>
+      class="fa fa-{{icon}}"></i>
   </div>
   <button
     class="slider__button"
     [ngClass]="{'disable': isButtonDisable}"
-    (click)="onClick()">Click for change</button>
+    (click)="onClick()">
+    Click for change
+  </button>
+  <h3>Evadible icons</h3>
+  <ul
+    class="slider__icons-list">
+    <li
+      class="slider__icons-list__item"
+      *ngFor="let item of iconItemsList">
+      <i
+        style="color: {{color}};"
+        class="fa fa-{{item}}"></i>
+    </li>
+
+  </ul>
 </div>

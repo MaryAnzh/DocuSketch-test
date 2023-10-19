@@ -21,7 +21,9 @@ export class SliderComponent {
   delay = 3000;
   timerInterval = 1000;
   iconIndex = 0;
-  icon = iconsClass[this.iconIndex];
+  iconItemsList = iconsClass;
+  icon = this.iconItemsList[this.iconIndex];
+
   color = randomColor();
   scale: 0 | 1 = 1;
   timerCount = this.delay / this.timerInterval;
