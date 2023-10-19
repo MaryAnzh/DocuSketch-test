@@ -5,4 +5,13 @@ export const iconsClass = [
   'magnifying-glass',
   'user',
   'star',
-  'image'];
+  'image',
+  'heart',
+  'pen-nib',
+  'paperclip',
+  'wand-magic-sparkles',
+  'music',
+  'camera-retro',
+  'shield-halved',
+  'face-smile',
+];
